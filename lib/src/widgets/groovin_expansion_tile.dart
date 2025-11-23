@@ -350,7 +350,7 @@ class _GroovinExpansionTileState extends State<GroovinExpansionTile>
     _headerColorTween
       ..begin = widget.collapsedTextColor ??
           expansionTileTheme.collapsedTextColor ??
-          theme.textTheme.subtitle1!.color
+          theme.textTheme.titleMedium?.color ?? colorScheme.primary
       ..end = widget.textColor ??
           expansionTileTheme.textColor ??
           colorScheme.primary;
