@@ -658,13 +658,13 @@ class GroovinListTile extends StatelessWidget {
         theme.listTileTheme.style ??
         ListTileStyle.list) {
       case ListTileStyle.drawer:
-        textStyle = theme.textTheme.bodyText1!;
+        textStyle = theme.textTheme.bodyLarge ?? const TextStyle();
         break;
       case ListTileStyle.list:
-        textStyle = theme.textTheme.subtitle1!;
+        textStyle = theme.textTheme.titleMedium ?? const TextStyle();
         break;
       default:
-        textStyle = theme.textTheme.subtitle1!;
+        textStyle = theme.textTheme.titleMedium ?? const TextStyle();
         break;
     }
     final Color? color = _textColor(theme, tileTheme, textStyle.color);
@@ -674,9 +674,9 @@ class GroovinListTile extends StatelessWidget {
   }
 
   TextStyle _subtitleTextStyle(ThemeData theme, ListTileThemeData tileTheme) {
-    final TextStyle textStyle = theme.textTheme.bodyText2!;
+    final TextStyle textStyle = theme.textTheme.bodyMedium ?? const TextStyle();
     final Color? color =
-        _textColor(theme, tileTheme, theme.textTheme.caption!.color);
+        _textColor(theme, tileTheme, theme.textTheme.bodySmall?.color);
     return _isDenseLayout(theme, tileTheme)
         ? textStyle.copyWith(color: color, fontSize: 12.0)
         : textStyle.copyWith(color: color);
@@ -686,7 +686,7 @@ class GroovinListTile extends StatelessWidget {
     ThemeData theme,
     ListTileThemeData tileTheme,
   ) {
-    final TextStyle textStyle = theme.textTheme.bodyText2!;
+    final TextStyle textStyle = theme.textTheme.bodyMedium ?? const TextStyle();
     final Color? color = _textColor(theme, tileTheme, textStyle.color);
     return textStyle.copyWith(color: color);
   }
